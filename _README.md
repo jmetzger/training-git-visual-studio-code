@@ -4,6 +4,9 @@
 ## Agenda
   1. Geschichte / Grundlagen 
      * [GIT Pdf](http://schulung.t3isp.de/documents/pdfs/git/git-training.pdf)
+    
+  1. Visual Studio Code
+     [Install Extension git graph](vscode/01-install-git-graph.md)
      
   1. Commands (with tipps & tricks) 
      * [git alias ](#git-alias-)
@@ -92,6 +95,9 @@
   1. GUIs
      * [git extensions gui](#git-extensions-gui)
      * [gui uebersicht](https://git-scm.com/downloads/guis)
+    
+  1. Exercises
+     [Übungen in Training 19_09_20_09](exercises/20240920-exercises.md)
      
 ## Backlog  
 
@@ -108,6 +114,8 @@
 
   * http://schulung.t3isp.de/documents/pdfs/git/git-training.pdf
 
+## Visual Studio Code
+
 ## Commands (with tipps & tricks) 
 
 ### git alias 
@@ -115,6 +123,7 @@
 
 ```
 git config --global alias.sl '!git log --oneline -2 && git status'
+
 ```
 
 ### git add + Tipps & Tricks
@@ -200,6 +209,12 @@ git config --global --list
 git config --unset --global alias.log
 ```
 
+### How set a value globally (for my user) 
+
+```
+git config --global user.name "Jochen Metzger"
+git config --global user.email "j.metzger@t3company.de"
+```
 
 ### git show
 
@@ -1492,6 +1507,8 @@ https://de.linkedin.com/pulse/mehrere-gitlabgithub-accounts-bzw-ssh-keys-zum-hos
 ### gui uebersicht
 
   * https://git-scm.com/downloads/guis
+
+## Exercises
 
 ## Installation 
 
