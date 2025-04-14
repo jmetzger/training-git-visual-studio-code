@@ -96,6 +96,9 @@
      * [git extensions gui](/gui/git-extensions.md)
      * [gui uebersicht](https://git-scm.com/downloads/guis)
     
+  1. Git und Mac
+     * [branch unter mac auf Kommandozeile anzeigen](/mac/git-branch-anzeigen.md)
+    
   1. Exercises
      [Übungen in Training 19_09_20_09](exercises/20240920-exercises.md)
      
