@@ -24,7 +24,10 @@
    
   1. Erweiterte Commands 
      * [git reflog](reflog.md) 
-     * [git reset - Back in Time](reset.md)   
+     * [git reset - Back in Time](reset.md)
+    
+  1. Tipps & tricks (.gitignore)
+     * [Globale .gitignore für User erstellen](/tipps-tricks/globale-git-ignore.md)  
      
   1. Tipps & tricks 
      * [Beautified log](beautify-log.md)
