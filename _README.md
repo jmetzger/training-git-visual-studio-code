@@ -17,6 +17,7 @@
      * [git show](#git-show)
      * [Needed commands for starters](#needed-commands-for-starters)
      * [git branch](#git-branch)
+     * [Branch Online löschen](#branch-online-löschen)
      * [git checkout](#git-checkout)
      * [git merge](#git-merge)
      * [git tag](#git-tag)
@@ -25,6 +26,9 @@
   1. Erweiterte Commands 
      * [git reflog](#git-reflog)
      * [git reset - Back in Time](#git-reset---back-in-time)
+    
+  1. Tipps & tricks (.gitignore)
+     * [Globale .gitignore für User erstellen](#globale-gitignore-für-user-erstellen)
      
   1. Tipps & tricks 
      * [Beautified log](#beautified-log)
@@ -95,6 +99,9 @@
   1. GUIs
      * [git extensions gui](#git-extensions-gui)
      * [gui uebersicht](https://git-scm.com/downloads/guis)
+    
+  1. Git und Mac
+     * [branch unter mac auf Kommandozeile anzeigen](#branch-unter-mac-auf-kommandozeile-anzeigen)
     
   1. Exercises
      [Übungen in Training 19_09_20_09](exercises/20240920-exercises.md)
@@ -266,6 +273,8 @@ git branch -D branchname # <- is the solution
 git branch -d -r origin/feature/501
 ```
 
+### Branch Online löschen
+
 ### git checkout
 
 
@@ -423,6 +432,15 @@ git reflog
 
 ```
 git reset --hard 2343 
+```
+
+## Tipps & tricks (.gitignore)
+
+### Globale .gitignore für User erstellen
+
+
+```
+git config --global core.excludesFile '~/.gitignore'
 ```
 
 ## Tipps & tricks 
@@ -1507,6 +1525,65 @@ https://de.linkedin.com/pulse/mehrere-gitlabgithub-accounts-bzw-ssh-keys-zum-hos
 ### gui uebersicht
 
   * https://git-scm.com/downloads/guis
+
+## Git und Mac
+
+### branch unter mac auf Kommandozeile anzeigen
+
+
+### Erklärung 
+
+Auf dem Mac benutzt du wahrscheinlich `zsh` (seit macOS Catalina der Standard). Hier zeige ich dir, wie du den Prompt so anpassen kannst, dass du den aktuellen Git-Branch immer siehst.
+
+---
+
+#### ✅ Schritt-für-Schritt-Anleitung
+
+##### 1. Öffne deine `.zshrc` Datei:
+```bash
+nano ~/.zshrc
+```
+
+##### 2. Füge diesen Code ans Ende der Datei hinzu (oder passe deinen `PROMPT` an):
+
+```zsh
+autoload -Uz vcs_info
+
+precmd() {
+  vcs_info
+}
+
+zstyle ':vcs_info:git:*' formats '(%b)'
+
+setopt prompt_subst
+PROMPT='%F{cyan}%n@%m%f %F{yellow}%~%f %F{green}${vcs_info_msg_0_}%f
+$ '
+```
+
+🧠 Erklärung:
+- `%b` ist der aktuelle Branch.
+- `${vcs_info_msg_0_}` enthält den Git-Branch, wenn du im Git-Verzeichnis bist.
+- `%~` zeigt dein aktuelles Verzeichnis an.
+- Farben: cyan = Benutzer@Host, gelb = Pfad, grün = Git-Branch
+
+---
+
+##### 3. Änderungen übernehmen:
+```bash
+source ~/.zshrc
+```
+
+---
+
+#### 🎁 Bonus: Noch schicker mit `Oh My Zsh`
+
+Wenn du [Oh My Zsh](https://ohmyz.sh/) installiert hast, brauchst du nur ein Theme zu wählen, z. B. `agnoster` oder `robbyrussell`, die zeigen automatisch den Branch an:
+
+```bash
+ZSH_THEME="agnoster"
+```
+
+In deiner `~/.zshrc` Datei ändern und dann wieder `source ~/.zshrc`.
 
 ## Exercises
 
