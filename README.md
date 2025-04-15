@@ -17,6 +17,7 @@
      * [git show](show.md)
      * [Needed commands for starters](started-commands.md)
      * [git branch](branch.md)
+     * [Branch Online löschen](main/branch-online-loeschen.md)
      * [git checkout](checkout.md)
      * [git merge](merge.md)
      * [git tag](tag.md)
